@@ -1,9 +1,6 @@
-import json
+from flask import Flask
+app = Flask(__name__)
 
-def app_run() : 
-    data = {}
-    data['key'] = 'value'
-    return json.dumps(data)
-
-if __name__ == '__main__':
-	print app_run()
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
